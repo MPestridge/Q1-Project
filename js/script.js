@@ -2,18 +2,31 @@
 $(document).ready(function() {
   $('select').material_select();
 
-var edamamAPI = "https:api.edamam.com/api/nutrition-details?app_id=8ec7dafd&app_key=10eb87abcfa912a8ad8daef79698acb8";
+  var ingredientArr =[];
+  function grabIngredients() {
+    var checkedIngredients = $('select').material_select();
+    ingredientArr.push(checkedIngredients);
+  }
+  grabIngredients();
+  console.log(ingredientArr);
 
-function test() {
-var testResults = $.getJSON(edamamAPI, {
+var edamamAPI = "https://g-edamam-matt-pestridge.herokuapp.com/search?q=";
+
+function recipeSearch() {
+  var newURL = "";
+  for (var i=0; i<ingredientArr.length; i++) {
+    if (ingredientArr.length < 1) {
+      newURL = edamamAPI + ingredientArr[i];
+    } else {
+      newURL = edamamAPI + ingredientArr.join("+");
+    }
+  }
+var objResults = $.getJSON(newURL, {
     contentType: "application/json",
-    title: JSON.stringify("ham"),
-    ingr: JSON.stringify(["ham"]),
     format: "json"
   });
-  console.log(testResults);
-  console.log("This function is running");
-};
-test();
+  console.log(objResults);
+}
+recipeSearch();
 
 }); // end for document ready //

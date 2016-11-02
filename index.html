@@ -15,7 +15,7 @@
     <aside class="col s12 m4 l3"> <!-- navigation column -->
       <h1>Logo Here</h1>
       <div class="input-field col s12">
-    <select multiple>
+    <select id="proteins" multiple>
       <option value="" disabled selected>Choose Your Meat</option>
       <option value="Beef">Beef</option>
       <option value="Chicken">Chicken</option>
@@ -28,7 +28,7 @@
     <label class="select-label">Proteins</label>
       </div>
     <div class="input-field col s12">
-  <select multiple>
+  <select id="veggies" multiple>
     <option value="" disabled selected>Choose Your Veggies</option>
     <option value="Black Beans">Black Beans</option>
     <option value="Pinto Beans">Pinto Beans</option>
@@ -105,9 +105,14 @@
   </select>
   <label class="select-label">Dairy</label>
     </div>
+    <div class="center">
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+      <i class="material-icons center">search</i>
+    </button>
     <section class="flow-text container">
       <p>Recipes on Tap</p>
     </section>
+    </div>
   </aside>
     <div class="col s12 m8 l9 green"> <!-- body display -->
       <section class="container section center-align">Fresh Brewed Results</section>
