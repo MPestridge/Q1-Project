@@ -34,9 +34,14 @@ $("#submit").click(function() {
   var objResults = $.getJSON(urlUpdate(), {
       contentType: "application/json",
       format: "json"
+    }, function(data) {
+      var recipeObjs = data.hits;
+      return recipeObjs;
     });
-    console.log(objResults);
+
+    // pulling a list of 10 recipes based on input ingredients //
   }
+
   recipeSearch();
   });
 }); // end for document ready //
