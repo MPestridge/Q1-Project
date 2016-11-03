@@ -4,6 +4,16 @@ $(document).ready(function() {
 
 var edamamAPI = "https://g-edamam-matt-pestridge.herokuapp.com/search?q=";
 
+var select = $('select');
+
+$("#clr-button").click(function() {
+  $("form input").val("");
+  select.prop('selectedIndex', 0); //Sets the first option as selected
+  select.material_select();        //Update material select
+});
+
+select.material_select();
+
 $("#submit").click(function() {
   var proteinsArr = $("#proteins").val();
   var veggiesArr = $("#veggies").val();
@@ -51,7 +61,7 @@ $("#submit").click(function() {
         $(".inner" + i).wrapAll("<div class='row outer-container card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
         $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
         $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");
-      } 
+      }
       }
     }
     });
