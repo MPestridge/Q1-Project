@@ -37,9 +37,8 @@ $("#submit").click(function() {
         $("#left-column").append($("<img class='inner' src=" + recipeObjs[0].recipe.image + ">"));
         $("#right-column").append($("<span class='card-title inner'>" +recipeObjs[0].recipe.label + "</span>"));
         $(".inner").wrapAll("<div class='row'><div class='col s12'><div class='card medium'><div class='card-image'></div></div></div></div>");
-        // (($("#body-display").append($("<div></div>").addClass("row"))).append($("<div></div>").addClass("col s12"))).append($("<div></div>").addClass("card medium"));
-        // (recipeObjs[1].recipe.image);
-        console.log(recipeObjs);
+        $(".card-image").after(("<div class='card-content'><p>" + recipeObjs[0].recipe.healthLabels + "</p></div>"));
+        $(".card-content").after("<div class='card-action'><a href='" + recipeObjs[0].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>")
     });
     // NOTE: pulling a list of 10 recipes based on input ingredients and creating cards filled with the JSON object data //
   }
