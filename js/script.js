@@ -14,7 +14,7 @@ $("#submit").click(function() {
   function joinedArr(arr) {
     return arr.join();
 }
-  // joinedArr(ingredientArr) returns a single array of checked ingredients //
+  // NOTE: joinedArr(ingredientArr) returns a single array of checked ingredients //
   var ingrString = joinedArr(ingredientArr);
   function recipeSearch() {
     function urlUpdate() {
@@ -26,22 +26,23 @@ $("#submit").click(function() {
         newURL = edamamAPI + ingrString.replace(/,/g , "+");
       }
     }
-    console.log(newURL);
     return newURL;
   }
-  // adds selected ingredients to the end of the website url //
-
-  var objResults = $.getJSON(urlUpdate(), {
+  // NOTE: adds selected ingredients to the end of the website url //
+  $.getJSON(urlUpdate(), {
       contentType: "application/json",
       format: "json"
     }, function(data) {
       var recipeObjs = data.hits;
-      return recipeObjs;
+        $("#left-column").append($("<img class='inner' src=" + recipeObjs[0].recipe.image + ">"));
+        $("#right-column").append($("<span class='card-title inner'>" +recipeObjs[0].recipe.label + "</span>"));
+        $(".inner").wrapAll("<div class='row'><div class='col s12'><div class='card medium'><div class='card-image'></div></div></div></div>");
+        // (($("#body-display").append($("<div></div>").addClass("row"))).append($("<div></div>").addClass("col s12"))).append($("<div></div>").addClass("card medium"));
+        // (recipeObjs[1].recipe.image);
+        console.log(recipeObjs);
     });
-
-    // pulling a list of 10 recipes based on input ingredients //
+    // NOTE: pulling a list of 10 recipes based on input ingredients and creating cards filled with the JSON object data //
   }
-
   recipeSearch();
   });
 }); // end for document ready //
