@@ -14,6 +14,11 @@ $("#clr-button").click(function() {
 
 select.material_select();
 
+$(".input-field").mouseleave(function() {
+  $("input .select-dropdown").removeClass(".active");
+  console.log("the mouse left the box");
+});
+
 $("#submit").click(function() {
   var proteinsArr = $("#proteins").val();
   var veggiesArr = $("#veggies").val();

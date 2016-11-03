@@ -11,3 +11,16 @@ p {
 .select-label {
   margin: -3%;
 }
+
+#page-container {
+  display: flex;
+}
+
+#body-display {
+  background-color: #F5F5F5;
+}
+
+/*#navigation {
+  background-color: white;
+  padding-bottom: 100%;
+}*/
