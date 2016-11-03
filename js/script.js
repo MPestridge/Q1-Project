@@ -33,22 +33,27 @@ $("#submit").click(function() {
       contentType: "application/json",
       format: "json"
     }, function createCards(data) {
+      $(".outer-container").remove();
       var recipeObjs = data.hits;
+      if (recipeObjs.length === 0) {
+        Materialize.toast('You have selected items that do not return any results! Please select different ingredients.', 6000, "rounded");
+      } else {
       for (var i=0; i<recipeObjs.length; i++) {
         if(i % 2 === 0) {
         $("#right-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
         $("#right-column").append($("<span class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
-        $(".inner" + i).wrapAll("<div class='row card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
+        $(".inner" + i).wrapAll("<div class='row outer-container card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
         $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
         $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");
-      } else {
+      } else if (i % 2 !== 0) {
         $("#left-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
         $("#left-column").append($("<span class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
-        $(".inner" + i).wrapAll("<div class='row card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
+        $(".inner" + i).wrapAll("<div class='row outer-container card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
         $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
         $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");
+      } 
       }
-      }
+    }
     });
     // NOTE: pulling a list of 10 recipes based on input ingredients and creating cards filled with the JSON object data //
   }
