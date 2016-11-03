@@ -32,13 +32,23 @@ $("#submit").click(function() {
   $.getJSON(urlUpdate(), {
       contentType: "application/json",
       format: "json"
-    }, function(data) {
+    }, function createCards(data) {
       var recipeObjs = data.hits;
-        $("#left-column").append($("<img class='inner' src=" + recipeObjs[0].recipe.image + ">"));
-        $("#right-column").append($("<span class='card-title inner'>" +recipeObjs[0].recipe.label + "</span>"));
-        $(".inner").wrapAll("<div class='row'><div class='col s12'><div class='card medium'><div class='card-image'></div></div></div></div>");
-        $(".card-image").after(("<div class='card-content'><p>" + recipeObjs[0].recipe.healthLabels + "</p></div>"));
-        $(".card-content").after("<div class='card-action'><a href='" + recipeObjs[0].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>")
+      for (var i=0; i<recipeObjs.length; i++) {
+        if(i % 2 === 0) {
+        $("#right-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
+        $("#right-column").append($("<span class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
+        $(".inner" + i).wrapAll("<div class='row card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
+        $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
+        $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");
+      } else {
+        $("#left-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
+        $("#left-column").append($("<span class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
+        $(".inner" + i).wrapAll("<div class='row card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
+        $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
+        $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");
+      }
+      }
     });
     // NOTE: pulling a list of 10 recipes based on input ingredients and creating cards filled with the JSON object data //
   }
