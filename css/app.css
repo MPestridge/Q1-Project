@@ -20,7 +20,9 @@ p {
   background-color: #F5F5F5;
 }
 
-/*#navigation {
-  background-color: white;
-  padding-bottom: 100%;
-}*/
+h1 {
+  font-family: 'Pacifico', cursive;
+  align-items: center;
+  color: #FFC107;
+  font-kerning: normal;
+}
