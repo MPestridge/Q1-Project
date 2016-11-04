@@ -33,6 +33,6 @@ h1 {
   padding-bottom: 5%;
 }
 
-select {
-  color: #FFC107
+ul.dropdown-content.select-dropdown li span {
+    color: #FFC107;
 }
