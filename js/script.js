@@ -48,6 +48,7 @@ $("#submit").click(function() {
       contentType: "application/json",
       format: "json"
     }, function createCards(data) {
+      $(".filler-text").remove();
       $(".outer-container").remove();
       var recipeObjs = data.hits;
       if (recipeObjs.length === 0) {
@@ -55,14 +56,14 @@ $("#submit").click(function() {
       } else {
       for (var i=0; i<recipeObjs.length; i++) {
         if(i % 2 === 0) {
-        $("#right-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
-        $("#right-column").append($("<span class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
+        $("#left-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
+        $("#left-column").append($("<span style='text-shadow: 2px 2px #212121;' class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
         $(".inner" + i).wrapAll("<div class='row outer-container card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
         $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
         $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");
       } else if (i % 2 !== 0) {
-        $("#left-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
-        $("#left-column").append($("<span class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
+        $("#right-column").append($("<img class='inner" + i + "' src=" + recipeObjs[i].recipe.image + ">"));
+        $("#right-column").append($("<span style='text-shadow: 2px 2px #212121;' class='card-title inner" + i + "'>" +recipeObjs[i].recipe.label + "</span>"));
         $(".inner" + i).wrapAll("<div class='row outer-container card" + i + "'><div class='col s12 crdcol" + i + "'><div class='card medium mcrd" + i + "'><div class='card-image crdimg" + i + "'></div></div></div></div>");
         $(".crdimg" + i).after(("<div class='card-content crdcont" + i + "'><p>" + recipeObjs[i].recipe.healthLabels + "</p></div>"));
         $(".crdcont" + i).after("<div class='card-action crdact" + i + "'><a href='" + recipeObjs[i].recipe.shareAs + "' target='_blankd'>View Recipe</a></div>");

@@ -14,7 +14,7 @@
 <body>
   <div id="page-container" class="row"> <!-- page container -->
     <aside id="navigation" class="col s12 m4 l3"> <!-- navigation column -->
-      <img src="grubbrew-logo.jpg" alt="grubbrew logo" style="width: 95%">
+      <img id="logo" src="grubbrew-logo.jpg" alt="grubbrew logo" style="width: 95%">
       <div class="input-field col s12">
     <select id="proteins" multiple>
       <option value="" disabled selected>Choose Your Meat</option>
@@ -119,9 +119,17 @@
     </section>
     </div>
   </aside>
-    <div id="body-display" class="col s12 m8 l9"> <!-- body display -->
-      <h1 class="header-text center-align">Recipes on Tap</h1>
+    <div id="body-display" class="row col s12 m8 l9"> <!-- body display -->
+      <h1 class="header-text">Recipes on Tap</h1>
       <div class="divider"></div>
+      <div class="filler-text row">
+        <div class="col s12 m6 push-m3">
+        <div style="background-color: #FFC107" class="card-panel">
+          <span class="center white-text">Select some ingredients that you already have in your house.  Then you can click the submit button and we will brew up some recipes that you can grub on.  If you have selected a lot of ingredients and want to start over click on the clear lists button to start over.
+          </span>
+        </div>
+      </div>
+      </div>
         <div id="left-column" class="col l6">
       </div>
       <div id="right-column" class="col l6">

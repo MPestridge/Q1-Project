@@ -4,6 +4,10 @@
   margin-bottom: 3%;
 }
 
+/*.header-text {
+  text-align: center;
+}*/
+
 p {
   font-size: 1em;
 }
@@ -14,15 +18,21 @@ p {
 
 #page-container {
   display: flex;
-}
-
-#body-display {
-  background-color: #F5F5F5;
+  flex-wrap: wrap;
 }
 
 h1 {
   font-family: 'Pacifico', cursive;
   align-items: center;
   color: #FFC107;
-  font-kerning: normal;
+  text-shadow: 2px 2px #757575;
+  text-align: center;
+}
+
+#logo {
+  padding-bottom: 5%;
+}
+
+select {
+  color: #FFC107
 }
