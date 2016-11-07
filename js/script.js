@@ -14,11 +14,6 @@ $("#clr-button").click(function() {
 
 select.material_select();
 
-// NOTE: code below is a possible solution for boxes not closing automatically on smaller devices
-// $(".input-field").mouseleave(function() {
-//   $("input .select-dropdown").removeClass(".active");
-//   console.log("the mouse left the box");
-// });
 
 $("#submit").click(function() {
   var proteinsArr = $("#proteins").val();
