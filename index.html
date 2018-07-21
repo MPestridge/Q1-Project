@@ -4,117 +4,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/materialize.min.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/script.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js" defer></script>
   <title>Grub Brew</title>
 </head>
 <body>
   <div id="page-container" class="row"> <!-- page container -->
     <aside id="navigation" class="col s12 m4 l3"> <!-- navigation column -->
-      <img id="logo" src="grubbrew-logo.jpg" alt="grubbrew logo" style="width: 95%">
+      <img id="logo" src="grubbrew-logo.jpg" alt="grubbrew logo">
       <div class="input-field col s12">
-    <select id="proteins" multiple>
-      <option value="" disabled selected>Choose Your Meat</option>
-      <option value="beef">Beef</option>
-      <option value="chicken">Chicken</option>
-      <option value="pork">Pork</option>
-      <option value="veal">Veal</option>
-      <option value="lamb">Lamb</option>
-      <option value="turkey">Turkey</option>
-      <option value="egg">Egg</option>
-    </select>
-    <label class="select-label">Proteins</label>
+        <select id="proteins" multiple>
+          <option value="" disabled>Choose Your Meat</option>
+          <option value="beef">Beef</option>
+          <option value="chicken">Chicken</option>
+          <option value="pork">Pork</option>
+          <option value="veal">Veal</option>
+          <option value="lamb">Lamb</option>
+          <option value="turkey">Turkey</option>
+          <option value="egg">Egg</option>
+        </select>
+        <label>Proteins</label>
       </div>
     <div class="input-field col s12">
-  <select id="veggies" multiple>
-    <option value="" disabled selected>Choose Your Veggies</option>
-    <option value="black-beans">Black Beans</option>
-    <option value="pinto-beans">Pinto Beans</option>
-    <option value="onions">Onions</option>
-    <option value="broccoli">Broccoli</option>
-    <option value="cabbage">Cabbage</option>
-    <option value="asparagus">Asparagus</option>
-    <option value="chickpeas">Chickpeas</option>
-    <option value="kidney-beans">Kidney Beans</option>
-    <option value="soy-beans">Soy Beans</option>
-    <option value="peas">Peas</option>
-    <option value="brussels-sprouts">Brussels Sprouts</option>
-    <option value="cauliflower">Cauliflower</option>
-    <option value="celery">Celery</option>
-    <option value="corn">Corn</option>
-    <option value="kale">Kale</option>
-    <option value="lettuce">Lettuce</option>
-    <option value="mushroom">Mushroom</option>
-    <option value="garlic">Garlic</option>
-    <option value="chive">Chive</option>
-    <option value="bell-pepper">Bell Pepper</option>
-    <option value="jalapeno">Jalapeno</option>
-    <option value="habanero">Habanero</option>
-    <option value="serrano-pepper">Serrano Pepper</option>
-    <option value="carrot">Carrot</option>
-    <option value="radish">Radish</option>
-    <option value="spinach">Spinach</option>
-    <option value="squash">Squash</option>
-    <option value="cucumber">Cucumber</option>
-    <option value="tomato">Tomato</option>
-    <option value="potato">Potato</option>
-    <option value="sweet-potato">Sweet Potato</option>
-    <option value="zucchini">Zucchini</option>
-  </select>
-  <label class="select-label">Vegetables</label>
+      <select id="veggies" multiple>
+        <option value="" disabled>Choose Your Veggies</option>
+        <option value="black-beans">Black Beans</option>
+        <option value="pinto-beans">Pinto Beans</option>
+        <option value="onions">Onions</option>
+        <option value="broccoli">Broccoli</option>
+        <option value="cabbage">Cabbage</option>
+        <option value="asparagus">Asparagus</option>
+        <option value="chickpeas">Chickpeas</option>
+        <option value="kidney-beans">Kidney Beans</option>
+        <option value="soy-beans">Soy Beans</option>
+        <option value="peas">Peas</option>
+        <option value="brussels-sprouts">Brussels Sprouts</option>
+        <option value="cauliflower">Cauliflower</option>
+        <option value="celery">Celery</option>
+        <option value="corn">Corn</option>
+        <option value="kale">Kale</option>
+        <option value="lettuce">Lettuce</option>
+        <option value="mushroom">Mushroom</option>
+        <option value="garlic">Garlic</option>
+        <option value="chive">Chive</option>
+        <option value="bell-pepper">Bell Pepper</option>
+        <option value="jalapeno">Jalapeno</option>
+        <option value="habanero">Habanero</option>
+        <option value="serrano-pepper">Serrano Pepper</option>
+        <option value="carrot">Carrot</option>
+        <option value="radish">Radish</option>
+        <option value="spinach">Spinach</option>
+        <option value="squash">Squash</option>
+        <option value="cucumber">Cucumber</option>
+        <option value="tomato">Tomato</option>
+        <option value="potato">Potato</option>
+        <option value="sweet-potato">Sweet Potato</option>
+        <option value="zucchini">Zucchini</option>
+      </select>
+      <label>Vegetables</label>
     </div>
     <div class="input-field col s12">
-  <select id="grains" multiple>
-    <option value="" disabled selected>Choose Your Grain</option>
-    <option value="flour">Flour</option>
-    <option value="bread">Bread</option>
-    <option value="bread-crumbs">Bread Crumbs</option>
-    <option value="pasta">Pasta</option>
-    <option value="oatmeal">Oatmeal</option>
-    <option value="tortilla-chips">Tortilla Chips</option>
-    <option value="crackers">Crackers</option>
-    <option value="rice">Rice</option>
-    <option value="quinoa">Quinoa</option>
-    <option value="couscous">Couscous</option>
-    <option value="tortillas">Tortillas</option>
-  </select>
-  <label class="select-label">Grain</label>
+      <select id="grains" multiple>
+        <option value="" disabled>Choose Your Grain</option>
+        <option value="flour">Flour</option>
+        <option value="bread">Bread</option>
+        <option value="bread-crumbs">Bread Crumbs</option>
+        <option value="pasta">Pasta</option>
+        <option value="oatmeal">Oatmeal</option>
+        <option value="tortilla-chips">Tortilla Chips</option>
+        <option value="crackers">Crackers</option>
+        <option value="rice">Rice</option>
+        <option value="quinoa">Quinoa</option>
+        <option value="couscous">Couscous</option>
+        <option value="tortillas">Tortillas</option>
+      </select>
+      <label>Grain</label>
     </div>
     <div class="input-field col s12">
-  <select id="sauces" multiple>
-    <option value="" disabled selected>Choose Your Sauce</option>
-    <option value="ketchup">Ketchup</option>
-    <option value="mustard">Mustard</option>
-    <option value="marinara">Marinara</option>
-    <option value="mayo">Mayo</option>
-    <option value="soy">Soy</option>
-    <option value="worcestershire">Worcestershire</option>
-  </select>
-  <label class="select-label">Sauces</label>
+      <select id="sauces" multiple>
+        <option value="" disabled>Choose Your Sauce</option>
+        <option value="ketchup">Ketchup</option>
+        <option value="mustard">Mustard</option>
+        <option value="marinara">Marinara</option>
+        <option value="mayo">Mayo</option>
+        <option value="soy">Soy</option>
+        <option value="worcestershire">Worcestershire</option>
+      </select>
+      <label>Sauces</label>
     </div>
     <div class="input-field col s12">
-  <select id="dairy" multiple>
-    <option value="" disabled selected>Choose Your Dairy</option>
-    <option value="butter">Butter</option>
-    <option value="cheese">Cheese</option>
-    <option value="milk">Milk</option>
-    <option value="cream">Cream</option>
-    <option value="yogurt">Yogurt</option>
-  </select>
-  <label class="select-label">Dairy</label>
+      <select id="dairy" multiple>
+        <option value="" disabled>Choose Your Dairy</option>
+        <option value="butter">Butter</option>
+        <option value="cheese">Cheese</option>
+        <option value="milk">Milk</option>
+        <option value="cream">Cream</option>
+        <option value="yogurt">Yogurt</option>
+      </select>
+      <label>Dairy</label>
     </div>
     <div class="center">
-    <button style="background-color: #FFC107" class="btn waves-effect waves-light" type="submit" name="action">
-      <i id="submit" class="material-icons center">search</i>
-    </button>
-    <div class="section">
-    <button class="btn-flat waves-effect waves-light">
-      <i style="color: #FFC107" id="clr-button" class="material-icons center" >Clear Lists</i>
-    </button>
-    </div>
+      <button id="submit-button" class="btn waves-effect waves-light" type="submit" name="action">
+        <i id="submit" class="material-icons center">search</i>
+      </button>
+      <div class="section">
+        <button class="btn-flat waves-effect waves-light">
+          <i id="clr-button" class="material-icons center" >Clear Lists</i>
+        </button>
+      </div>
     </div>
   </aside>
     <div id="body-display" class="row col s12 m8 l9"> <!-- body display -->
@@ -122,21 +126,17 @@
       <div class="divider"></div>
       <div class="filler-text row">
         <div class="col s12 m6 push-m3">
-        <div style="background-color: #FFC107" class="card-panel holder-text">
-          <span class="center white-text">Select some ingredients that you already have in your house.  Then you can click the submit button and we will brew up some recipes that you can grub on.  If you have selected a lot of ingredients and want to start over click on the clear lists button to start over.
-          </span>
+          <div id="info-card" class="card-panel holder-text">
+            <span class="center white-text">Select some ingredients that you already have in your cabinets or pantries. Then you can click the submit button and we will brew up some recipes that you can grub on. If you have selected too many ingredients and want to start over click on the clear lists button to restart.
+            </span>
+          </div>
         </div>
       </div>
-      </div>
-        <div id="left-column" class="col l6">
+      <div id="left-column" class="col l6">
       </div>
       <div id="right-column" class="col l6">
       </div>
     </div>
   </div>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 </body>
 </html>

@@ -1,15 +1,26 @@
-.input-field {
-  border: 1px solid black;
-  border-radius: 15px;
-  margin-bottom: 3%;
+#clr-button {
+  color: #FFC107;
+}
+
+.header-text {
+  align-items: center;
+  color: #FFC107;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px #757575;
+  text-align: center;
+}
+
+#info-card {
+  background-color: #FFC107;
+}
+
+#logo {
+  padding: 2% 0 5% 0;
+  width: 95%;
 }
 
 p {
   font-size: 1em;
-}
-
-.select-label {
-  margin: -3%;
 }
 
 #page-container {
@@ -17,16 +28,8 @@ p {
   flex-wrap: wrap;
 }
 
-h1 {
-  font-family: 'Pacifico', cursive;
-  align-items: center;
-  color: #FFC107;
-  text-shadow: 2px 2px #757575;
-  text-align: center;
-}
-
-#logo {
-  padding-bottom: 5%;
+#submit-button {
+  background-color: #FFC107;
 }
 
 ul.dropdown-content.select-dropdown li span {
